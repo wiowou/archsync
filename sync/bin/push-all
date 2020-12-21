@@ -1,9 +1,9 @@
 #!/bin/bash
 remote=$1
 pplist push $remote
-cd /etc
-push hosts $remote/etc
-push fstab $remote/etc
-cd /usr/share/X11/xkb/keycodes
-push evdev $remote/etc
-cd
+#cd /etc
+#push hosts $remote/etc
+#push fstab $remote/etc
+#cd /usr/share/X11/xkb/keycodes
+#push evdev $remote/etc
+#cd
