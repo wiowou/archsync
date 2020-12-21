@@ -1,0 +1,14 @@
+Description='A basic dhcp ethernet connection'
+Interface=enp5s0f1
+Connection=ethernet
+IP=static
+Address='192.168.1.253/24'
+Gateway='192.168.1.1'
+DNS=('192.168.1.1')
+#DHCPClient=dhcpcd
+#DHCPReleaseOnStop=no
+## for DHCPv6
+#IP6=dhcp
+#DHCP6Client=dhclient
+## for IPv6 autoconfiguration
+#IP6=stateless

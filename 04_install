@@ -1,0 +1,16 @@
+#!/bin/bash
+
+arch-chroot /mnt/ pacman -S dialog netctl wpa_supplicant intel-ucode sudo grub efibootmgr dosfstools os-prober mtools openssh rsync rxvt-unicode pulsemixer pulseaudio alsa-utils xf86-input-synaptics vim nfs-utils
+arch-chroot /mnt/ pacman -S sway xorg-xrdb man-db 
+arch-chroot /mnt/ pacman -S - < sync/pkg/pacman.list
+#arch-chroot /mnt/ su -c "cd pkg/yay; git pull; makepkg -si" bk #this might not work
+
+cp netctl/wireless /mnt/etc/netctl/wireless
+cp netctl/wired /mnt/etc/netctl/wired
+cp netctl/failover /mnt/etc/netctl/failover
+
+cp etc/hosts /mnt/etc/hosts
+cp etc/fstab /mnt/etc/fstab
+
+arch-chroot /mnt/ netctl enable wired 
+arch-chroot /mnt/ netctl start wired

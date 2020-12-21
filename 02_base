@@ -1,0 +1,10 @@
+#!/bin/bash
+
+mkfs.ext4 /dev/sdc2 -L rootfs
+mkfs.fat -F32 /dev/sdc1 -n boot
+mount /dev/sdc2 /mnt
+pacstrap /mnt base base-devel linux linux-firmware
+genfstab -U -p /mnt >> /mnt/etc/fstab
+echo "pacman" > /mnt/etc/hostname
+echo "en_US.UTF-8 UTF-8" > /mnt/etc/locale.gen
+arch-chroot /mnt/ locale-gen

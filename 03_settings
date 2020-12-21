@@ -1,0 +1,21 @@
+#!/bin/bash
+
+arch-chroot /mnt/ rm /etc/localtime
+arch-chroot /mnt/ ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
+arch-chroot /mnt/ hwclock --systohc --utc
+
+echo pacman > /mnt/etc/hostname
+cp pman/pacman.conf /mnt/etc/pacman.conf
+arch-chroot /mnt/ pacman -Syu
+echo "set root pass"
+arch-chroot /mnt/ passwd
+arch-chroot /mnt/ useradd -mg users -G wheel,storage,power -s /bin/bash bk
+echo "set bk pass"
+arch-chroot /mnt/ passwd bk
+#cp sudoers /mnt/etc/sudoers
+
+mkdir /mnt/etc/systemd/system/getty@tty1.service.d
+cp override.conf /mnt/etc/systemd/system/getty@tty1.service.d/override.conf
+rm /mnt/home/bk/.bash*
+cp -a sync/* /mnt/home/bk
+cp -a sync/.[^.]* /mnt/home/bk
