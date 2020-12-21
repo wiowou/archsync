@@ -1,0 +1,11 @@
+#!/bin/bash
+
+local=`pwd`
+if [ $# -gt 1 ]; then
+  rsync -a bkapadia@bigred2:~/$1 $2
+elif [ $# -gt 0 ]; then
+  rsync -a bkapadia@bigred2:~/$1 .
+else
+  echo "usage: br2pull dir-in-br2 [local-dir]"
+fi
+echo pulled $local

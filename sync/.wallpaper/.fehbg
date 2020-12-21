@@ -1,0 +1,2 @@
+#!/bin/sh
+'feh' '--bg-max' '/home/bk/.wallpaper/active/active.jpg' 

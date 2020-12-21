@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd /home/bk/pkg
+
+sudo pip install -r pip.list

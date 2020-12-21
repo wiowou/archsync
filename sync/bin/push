@@ -1,0 +1,11 @@
+#!/bin/bash
+
+local=`pwd`
+if [ $# -gt 0 ]; then
+  local=$1
+  # rsync -a --exclude */node_modules $local /home/bk/mnt/backup/sync
+  rsync -a --exclude */node_modules $local $2 
+else
+  echo "usage: push dir-to-push sync-dir "
+fi
+echo pushed $local to $2/$1

@@ -1,0 +1,3 @@
+#!/bin/bash
+push-all-local
+systemctl suspend

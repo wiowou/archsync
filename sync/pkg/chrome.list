@@ -1,0 +1,33 @@
+ublock origin
+disconnect
+privacy badger
+wheel smooth scroller
+    step size = 200
+vimium
+
+# Insert your preferred key mappings here.
+unmap h
+unmap j
+unmap k
+unmap l
+unmap ;
+map j scrollLeft
+map k scrollDown
+map l scrollUp
+map ; scrollRight
+unmap H
+map <backspace> goBack
+map <c-j> previousTab
+map <c-;> nextTab
+unmap d
+unmap u
+map <c-k> scrollPageDown 
+map <c-l> scrollPageUp
+
+https everywhere
+cookie autodelete
+dark reader
+dark theme
+
+https://searx.info
+https://searx.space

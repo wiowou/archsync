@@ -1,0 +1,10 @@
+# Static table lookup for hostnames.
+# See hosts(5) for details.
+127.0.0.1 localhost.localdomain localhost
+::1 localhost.localdomain localhost
+127.0.1.1 pacman.localdomain pacman
+192.168.1.254 kraken
+192.168.1.235 orion
+
+0.0.0.0 get.code-industry.net
+0.0.0.0 get.code-industry.net

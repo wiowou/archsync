@@ -1,0 +1,6 @@
+#!/bin/bash
+cd
+remote=/home/bk/mnt/backup
+sudo mount /dev/sda1 $remote 
+push-all $remote/wayland 
+sudo umount $remote

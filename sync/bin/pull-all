@@ -1,0 +1,6 @@
+#!/bin/bash
+remote=$1
+pplist pull $remote
+sudo pull hosts $remote/etc /etc/hosts
+sudo pull fstab $remote/etc /etc/fstab
+sudo pull evdev $remote/etc /usr/share/X11/xkb/keycodes/evdev

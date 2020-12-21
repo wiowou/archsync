@@ -1,0 +1,13 @@
+#!/bin/bash
+
+local=`pwd`
+if [ $# -gt 1 ]; then
+  local=$1
+  rsync -a $local bkapadia@bigred2:~/$2
+elif [ $# -gt 0 ]; then
+  local=$1
+  rsync -a $local bkapadia@bigred2:~/
+else
+  echo "usage: br2push dir-to-push-to-br2"
+fi
+echo pushed $local

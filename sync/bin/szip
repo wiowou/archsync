@@ -1,0 +1,4 @@
+#!/bin/bash
+
+tar -czf - $1 | openssl enc -e -aes-256-cbc -pbkdf2 -iter 100000 -pass file:$HOME/.pinit -out $1.sec.tar.gz
+

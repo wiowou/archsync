@@ -1,0 +1,6 @@
+[user]
+	name = abc 
+	email = 
+	excludesfile = /home/bk/.gitignore_global
+[core]
+	excludesfile = /home/bk/.gitignore_global

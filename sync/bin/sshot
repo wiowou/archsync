@@ -1,0 +1,9 @@
+#!/bin/bash
+
+fname=/home/bk/tmp/1.png
+
+if [ $# -eq 1 ]; then
+	fname=$1
+fi
+
+grim -g "$(slurp)" $fname

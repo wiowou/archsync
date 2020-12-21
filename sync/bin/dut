@@ -1,0 +1,7 @@
+#!/bin/bash
+
+dest=.
+if [ $# -gt 0 ]; then
+    dest=$1
+fi
+du -h --max-depth=1 --exclude=node_modules $dest | sort -rh

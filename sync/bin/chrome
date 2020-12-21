@@ -1,0 +1,3 @@
+#!/bin/bash
+# /usr/bin/chromium --disk-cache-dir=/tmp/cache --user-data-dir=/home/bk/.config/chromium-guest 
+/usr/bin/brave --disk-cache-dir=/tmp/cache --user-data-dir=/home/bk/.config/BraveSoftware/brave-guest 

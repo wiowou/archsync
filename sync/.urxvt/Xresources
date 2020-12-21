@@ -1,0 +1,22 @@
+URxvt.saveLines: 20000
+!URxvt.font: xft:DejaVu Sans Mono:size=9:antialias=true:hinting=true
+!URxvt.boldFont: xft:DejaVu Sans Mono:bold:size=9:antialias=true:hinting=true
+URxvt.font: xft:DejaVuSansMono Nerd Font:size=9:antialias=true
+URxvt.boldFont: xft:DejaVuSansMono Nerd Font:style=bold:size=9:antialias=true
+URxvt.loginShell: yes
+URxvt.scrollstyle: plain
+URxvt.scrollbar: false
+URxvt.scrollbar_right: false
+URxvt.termName: rxvt
+URxvt.perl-ext-common: default,selection-to-clipboard,matcher,tabbed
+URxvt.matcher.button: 1
+URxvt.tabbed.new-button: yes
+URxvt.tabbed.reopen-on-close: yes
+URxvt.keysym.Control-Right: perl:tabbedex:next_tab
+URxvt.keysym.Control-Left: perl:tabbedex:prev_tab
+URxvt.keysm.Control-V: eval:paste_clipboard
+URxvt.keysm.Control-C: eval:selection_to_clipboard
+URxvt.fading: 30
+URxvt.transparent: true
+URxvt.shading: 30
+URxvt.keysym.C-semicolon: \033[;

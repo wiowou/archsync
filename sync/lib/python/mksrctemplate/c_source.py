@@ -1,0 +1,2 @@
+csource='''#include "${name}.${hdrExt}"
+'''

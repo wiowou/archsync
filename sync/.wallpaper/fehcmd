@@ -1,0 +1,1 @@
+feh -o active/montage.jpg -m -x -W 1680 -H 1080 -y 560 -E 350 -s -f fileList

@@ -1,0 +1,101 @@
+#!/usr/bin/python
+
+import sys
+import os
+from datetime import date as dt
+from functools import total_ordering
+
+#total_ordeering
+class Arrival:
+    def __init__(self, qty, date, vendor):
+        self.qty = qty
+        self.date = date
+        self.vendor = vendor
+
+    def __eq__(self, other):
+        return (self.date, self.vendor, self.qty) == (other.date, other.vendor, other.qty)
+
+    def __ne__(self, other):
+        return not (self == other)
+    
+    def __lt__(self, other):
+        return (self.date, self.vendor, self.qty) < (other.date, other.vendor, other.qty)
+
+    def __str__(self):
+        return str(self.qty) + ' ' + str(self.date) + ' ' + str(self.vendor)
+
+class Food:
+    def __init__(self, path, level=0):
+        self.level = level
+        self.title = None
+        self.units = None
+        self.stocked = []
+        self.used = []
+        self.arriving = []
+        self.foods = []
+        self.path = path
+        self._parse(path)
+
+    def _is_category(self):
+        return len(self.stocked) + len(self.used) + len(self.arriving) == 0 
+
+    def _parse(self, path):
+        if os.path.isfile(path):
+            self.title = os.path.basename(path).split('.')[0]
+            f = open(path, 'r')
+            lines = f.read().splitlines()
+            f.close()
+            is_arrival = False
+            is_used = False
+            is_stocked = False
+            for line in lines:
+                if line[0] == '#':
+                    self.units = line[1:].strip()
+                    continue
+                elif 'purchased' in line.lower():
+                    is_used = False
+                    is_arrival = False
+                    is_stocked = True 
+                    continue
+                elif 'used' in line.lower():
+                    is_used = True
+                    is_arrival = False
+                    is_stocked = False
+                    active_array = self.used
+                    continue
+                elif 'arriving' in line.lower():
+                    active_array = self.arriving
+                    is_used = False
+                    is_arrival = True
+                    is_stocked = False 
+                    continue
+                if is_used:
+                    words = line.split()
+                    self.used.append(float(words[0].strip()))
+                elif is_stocked:
+                    self.stocked.append(float(line.strip()) )
+                elif is_arrival:
+                    words = line.split()
+                    qty = float(words[0].strip())
+                    arrival_date = dt.fromisoformat(words[1].strip())
+                    vendor = words[2].strip()
+                    if arrival_date > dt.today():
+                        arrival = Arrival(qty, arrival_date, vendor)
+                    else:
+                        self.stocked.append(qty)
+        elif os.path.isdir(path):
+            self.title = os.path.basename(path)
+            paths = os.listdir()
+            for path in paths:
+                self.foods.append(Food(os.path.join(self.path, path), self.level + 1 ) )
+    
+    def __str__(self):
+        spaces = ''
+        if self.level > 0:
+            spaces = '  '*self.level
+        if self._is_category():
+            return spaces + self.title
+
+
+
+

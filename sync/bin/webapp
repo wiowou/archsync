@@ -1,0 +1,8 @@
+#!/bin/bash
+
+git clone ssh://git@github.com/wiowou/webapp_template --branch single-page-libs --single-branch $1
+cd $1
+rm -r -f .git
+ncu -u
+npm install
+cd ..

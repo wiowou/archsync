@@ -1,0 +1,4 @@
+#!/bin/bash
+cd
+remote=/home/bk/mnt/nas/archsync
+pull-all $remote 

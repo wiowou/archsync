@@ -1,0 +1,1135 @@
+
+# 2020-02-16 21:38:56.286162
++\dt
+
+# 2020-02-16 21:39:12.137214
++\df
+
+# 2020-02-16 21:39:53.341895
++\q
+
+# 2020-05-10 20:57:16.171138
++\d
+
+# 2020-05-10 20:57:50.785247
++select * from v_last_pulls
+
+# 2020-05-10 20:58:23.593732
++clear
+
+# 2020-05-10 20:59:41.120820
++\q
+
+# 2020-05-10 21:04:07.090270
++select * from v_symbols
+
+# 2020-05-10 21:05:01.730337
++select * from hosts
+
+# 2020-05-10 21:07:59.163693
++select * from symbols
+
+# 2020-05-10 21:08:24.975220
++select * from instruments
+
+# 2020-05-10 21:08:36.656502
++select * from instruments where active=False
+
+# 2020-05-10 21:13:07.332566
++clear
+
+# 2020-05-10 21:13:17.615119
++select * from v_statements;
+
+# 2020-05-10 21:21:11.465948
++\q
+
+# 2020-05-10 21:23:04.129789
++\i views.plsql
+
+# 2020-05-10 21:26:27.795121
++clear
+
+# 2020-05-10 21:26:34.726870
++select * from v_statements;
+
+# 2020-05-10 21:30:14.846793
++select * from v_statements where year > 2018;
+
+# 2020-05-10 21:30:51.135214
++\h
+
+# 2020-05-10 21:37:13.716057
++\q
+
+# 2020-05-10 21:37:23.184118
++select * from v_statements where year > 2018;
+
+# 2020-05-10 21:38:03.492806
++select * from v_statements where year > 2018 order by cash_to_debt desc;
+
+# 2020-05-10 21:39:14.173547
++select * from v_statements where year > 2018 and cash_to_debt not null order by cash_to_debt desc;
+
+# 2020-05-10 21:39:26.805581
++select * from v_statements where year > 2018 and not cash_to_debt = null order by cash_to_debt desc;
+
+# 2020-05-10 21:39:46.005522
++select * from v_statements where year > 2018 and not cash_to_debt is null order by cash_to_debt desc;
+
+# 2020-05-10 21:45:36.712910
++select * from v_statements where instrument_id = 813 year > 2018 and not cash_to_debt is null order by cash_to_debt desc;
+
+# 2020-05-10 21:45:43.595728
++select * from v_statements where instrument_id = 813 and year > 2018 and not cash_to_debt is null order by cash_to_debt desc;
+
+# 2020-05-10 22:02:34.998188
++select * from v_statements where year > 2018 and not cash_to_debt is null order by cash_to_debt desc;
+
+# 2020-05-10 22:04:29.393564
++select * from v_statements where year > 2018 and not cash_to_debt is null and not operating_roa is null order by operating_roa desc;
+
+# 2020-05-10 22:11:51.252755
++select * from v_statements where year > 2018 and not cash_to_debt is null and not operating_roa is null not net_income_to_rev is null and net_income_to_rev > 0.1 order by operating_roa desc;
+
+# 2020-05-10 22:12:30.831108
++select * from v_statements where year > 2018 and not cash_to_debt is null and not operating_roa is null and net_income_to_rev is null and net_income_to_rev > 0.1 order by operating_roa desc;
+
+# 2020-05-10 22:12:53.707326
++select * from v_statements where year > 2018 and not cash_to_debt is null and not operating_roa is null and not net_income_to_rev is null and net_income_to_rev > 0.1 order by operating_roa desc;
+
+# 2020-05-10 22:29:57.991908
++clear
+
+# 2020-05-10 22:32:32.946713
++select * from statement_pulls
+
+# 2020-05-10 22:32:54.290048
++select * from statement_pulls limit 1000
+
+# 2020-05-10 22:33:32.670758
++select * from statement_pulls where year = 2019
+
+# 2020-05-10 22:49:24.557605
++select * from statement_pulls where year = 2019 and statement_type_id = 5;
+
+# 2020-05-10 22:49:34.027021
++select * from statement_pulls where year = 2018 and statement_type_id = 5;
+
+# 2020-05-10 22:49:53.602395
++select * from statement_pulls where year = 2019 and period_id = 5;
+
+# 2020-05-10 22:50:09.953090
++select * from statement_pulls where year = 2020 and period_id = 5;
+
+# 2020-05-10 22:54:44.830436
++select * from v_statements where year = 2019 and not cash_to_debt is null and not operating_roa is null and not net_income_to_rev is null and net_income_to_rev > 0.1 order by operating_roa desc;
+
+# 2020-05-10 23:07:47.830062
++\i views.plsql
+
+# 2020-05-10 23:08:29.789974
++select * from v_best_statements;
+
+# 2020-05-10 23:19:38.077435
++\i views.plsql
+
+# 2020-05-10 23:20:18.014716
++drop view v_best_statements;
+
+# 2020-05-10 23:20:28.889986
++\i views.plsql
+
+# 2020-05-10 23:20:41.571681
++select * from v_best_statements;
+
+# 2020-05-10 23:21:23.818841
++select * from v_best_statements limit 5;
+
+# 2020-05-10 23:23:04.597901
++drop view v_best_statements;
+
+# 2020-05-10 23:23:10.554791
++\i views.plsql
+
+# 2020-05-10 23:23:18.264817
++select * from v_best_statements;
+
+# 2020-05-10 23:23:50.706707
++select * from v_last_quote limit 5;
+
+# 2020-05-10 23:24:22.292054
++select * from v_last_quote;
+
+# 2020-05-10 23:25:16.312822
++select * from v_best_statements;
+
+# 2020-05-10 23:28:23.884701
++drop view v_statements
+
+# 2020-05-10 23:28:33.791669
++drop view v_best_statements;
+
+# 2020-05-10 23:28:40.280988
++drop view v_statements;
+
+# 2020-05-10 23:29:15.608200
++\i views.plsql
+
+# 2020-05-10 23:29:19.699354
++select * from v_best_statements;
+
+# 2020-05-10 23:30:50.802651
++\i views.plsql
+
+# 2020-05-10 23:30:59.354635
++drop view v_best_statements;
+
+# 2020-05-10 23:31:04.259093
++\i views.plsql
+
+# 2020-05-10 23:31:08.335529
++select * from v_best_statements;
+
+# 2020-05-10 23:46:23.495794
++\q
+
+# 2020-05-17 14:30:52.699131
++\dt
+
+# 2020-05-17 14:46:27.644491
++select * from instrument_types;
+
+# 2020-05-17 14:47:33.440720
++select * from instruments where type_id=4
+
+# 2020-05-17 14:47:56.251759
++select * from v_symbols where instrument_id=1652
+
+# 2020-05-17 14:51:56.783392
++select * from indexes;
+
+# 2020-05-17 15:08:17.964354
++select * from instrument_indexes where index_id = 0
+
+# 2020-05-17 15:09:33.545988
++select * from hosts;
+
+# 2020-05-17 15:12:47.169179
++select * from v_symbols where instrument_id=51
+
+# 2020-05-17 15:15:28.102090
++update instruments set active=false where id=51;
+
+# 2020-05-17 15:16:00.858625
++select * from v_symbols where instrument_id=158
+
+# 2020-05-17 15:18:30.705899
++update instruments set active=false where id=158;
+
+# 2020-05-17 15:18:44.958079
++select * from v_symbols where instrument_id=231
+
+# 2020-05-17 15:25:50.122915
++update instruments set active=false where id=231;
+
+# 2020-05-17 15:26:01.359965
++select * from v_symbols where instrument_id=359
+
+# 2020-05-17 15:26:17.343720
++update instruments set active=false where id=359;
+
+# 2020-05-17 15:26:28.163315
++select * from v_symbols where instrument_id=383
+
+# 2020-05-17 18:14:59.096952
++update instruments set active=false where id=383;
+
+# 2020-05-17 18:15:06.394997
++select * from v_symbols where instrument_id=402
+
+# 2020-05-17 18:16:19.576841
++update instruments set active=false where id=402;
+
+# 2020-05-17 18:16:30.314936
++select * from v_symbols where instrument_id=404
+
+# 2020-05-17 18:17:24.097824
++update instruments set active=false where id=404;
+
+# 2020-05-17 18:18:04.383659
++select * from v_symbols where instrument_id=421
+
+# 2020-05-17 18:26:57.984766
++select * from hosts;
+
+# 2020-05-17 18:28:43.025678
++insert into symbols (instrument_id, host_id, symbol, name) values
+
+# 2020-05-17 18:29:54.472060
++insert into symbols (instrument_id, host_id, symbol, name) values (421, 1, 'J', 'jacobs engineering');
+
+# 2020-05-17 18:30:11.722525
++insert into symbols (instrument_id, host_id, symbol, name) values (421, 2, 'J', 'jacobs engineering');
+
+# 2020-05-17 18:30:16.826510
++insert into symbols (instrument_id, host_id, symbol, name) values (421, 4, 'J', 'jacobs engineering');
+
+# 2020-05-17 18:30:25.271774
++select * from v_symbols where instrument_id=421
+
+# 2020-05-17 18:30:55.898579
++select * from v_symbols where instrument_id=428
+
+# 2020-05-17 18:31:17.103765
++update instruments set active=false where id=428;
+
+# 2020-05-17 18:31:23.055268
++select * from v_symbols where instrument_id=429
+
+# 2020-05-17 18:36:30.260804
++insert into symbols (instrument_id, host_id, symbol, name) values (429, 1, 'PEAK', 'healthpeak properties');
+
+# 2020-05-17 18:36:36.891537
++insert into symbols (instrument_id, host_id, symbol, name) values (429, 2, 'PEAK', 'healthpeak properties');
+
+# 2020-05-17 18:36:44.526807
++insert into symbols (instrument_id, host_id, symbol, name) values (429, 4, 'PEAK', 'healthpeak properties');
+
+# 2020-05-17 18:37:05.248387
++select * from v_symbols where instrument_id=446
+
+# 2020-05-17 18:37:25.140438
++update instruments set active=false where id=446;
+
+# 2020-05-17 18:37:34.760775
++select * from v_symbols where instrument_id=483
+
+# 2020-05-17 18:39:20.518687
++update instruments set active=false where id=483;
+
+# 2020-05-17 18:39:34.199752
++select * from v_symbols where instrument_id=496
+
+# 2020-05-17 18:41:38.263711
++update instruments set active=false where id=496;
+
+# 2020-05-17 18:41:40.731522
++clear
+
+# 2020-05-17 19:00:37.618487
++select * from instrument_types;
+
+# 2020-05-17 19:12:59.177799
++select * from indexes;
+
+# 2020-05-17 19:14:51.224752
++select * from v_instrument_indexes where index_id=1
+
+# 2020-05-17 19:15:46.862626
++select * from v_instrument_indexes where index_id=1 and host_id=2;
+
+# 2020-05-17 19:16:02.008928
++select count(*) from v_instrument_indexes where index_id=1 and host_id=2;
+
+# 2020-05-17 19:16:53.699718
++select * from v_instrument_indexes where index_id=1
+
+# 2020-05-17 19:17:13.923696
++select * from instrument_indexes where index_id=1 and instrument_id=1
+
+# 2020-05-17 20:00:55.411859
++select * from instrument_types;
+
+# 2020-05-17 20:01:57.304335
++select * from instruments;
+
+# 2020-05-17 20:02:38.831364
++select * from instruments order by id desc limit 1;
+
+# 2020-05-17 20:03:11.241927
++insert into instruments (type_id) values (4);
+
+# 2020-05-17 20:03:20.485462
++select * from instruments order by id desc limit 1;
+
+# 2020-05-17 20:04:39.473619
++select * from indexes;
+
+# 2020-05-17 20:06:22.426066
++insert into symbols (instrument_id, host_id, symbol, name) values (1666, 2, 'SPY', 'snp500 etf');
+
+# 2020-05-17 20:06:28.780787
++insert into symbols (instrument_id, host_id, symbol, name) values (1666, 4, 'SPY', 'snp500 etf');
+
+# 2020-05-17 20:06:34.787564
++select * from hosts;
+
+# 2020-05-17 20:07:28.475893
++insert into instrument_indexes (index_id, instrument_id) values (1, 1666);
+
+# 2020-05-17 20:07:31.037488
++clear
+
+# 2020-05-17 21:13:59.142428
++\q
+
+# 2020-05-17 21:32:53.768065
++select * from order_status_types
+
+# 2020-05-17 21:32:59.798520
++\q
+
+# 2020-05-17 21:33:48.514510
++select * from order_status_types;
+
+# 2020-05-17 21:33:59.143143
++select * from order_status_types
++;
+
+# 2020-05-17 21:34:15.140108
++select * from order_types;
+
+# 2020-05-17 21:34:58.273848
++select * from accounts;
+
+# 2020-05-17 21:51:31.245257
++select * from v_trading_pnl;
+
+# 2020-05-17 22:30:39.228636
++drop view v_instrument_pnl;
+
+# 2020-05-17 22:31:43.601514
++drop view v_instrument_pnl cascade;
+
+# 2020-05-17 22:36:04.661335
++\i views.plsql
+
+# 2020-05-17 22:36:10.401272
++\q
+
+# 2020-05-17 22:36:39.528980
++\i views.plsql
+
+# 2020-05-17 23:21:00.963075
++\q
+
+# 2020-05-24 14:35:13.736900
++select * from hosts;
+
+# 2020-05-25 00:06:38.199158
++\q
+
+# 2020-05-28 10:23:05.249061
++select * from v_symbols where name like '%norwei%';
+
+# 2020-05-28 10:23:27.764202
++select * from v_symbols where name like '%norw%';
+
+# 2020-05-28 10:25:18.205677
++select * from v_statements where instrument_id=178;
+
+# 2020-05-28 10:37:03.109251
++select * from v_statements where instrument_id=178 order by year desc;
+
+# 2020-05-28 11:02:55.096970
++select name, symbol from v_symbols;
+
+# 2020-05-28 11:03:20.590966
++select name, symbol from v_symbols where host_id=4
++;
+
+# 2020-05-28 11:23:02.408056
++select name, symbol, instrument_id from v_symbols where host_id=4 order by instrument_id;
+
+# 2020-05-28 11:24:22.667112
++select * from v_symbols where symbol='RCL';
+
+# 2020-05-28 11:24:45.122144
++select * from v_symbols where symbol='CCL';
+
+# 2020-05-28 11:25:07.708900
++select * from v_symbols where symbol='NCLH';
+
+# 2020-05-28 11:26:19.783691
++select * from v_statements where instrument_id=178 or instrument_id=17 or instrument_id=215 order by year desc;
+
+# 2020-06-08 20:09:34.189324
++select * from v_symbols where symbol='CCL';
+
+# 2020-06-08 20:10:01.972063
++select * from hosts;
+
+# 2020-06-08 20:10:50.754460
++select * from v_statements where instrument_id=178 or instrument_id=17 or instrument_id=215 order by year desc;
+
+# 2020-06-08 20:11:23.297333
++select * from v_statements where instrument_id=215 order by year desc;
+
+# 2020-06-11 14:54:06.566422
++\q
+
+# 2020-07-29 20:23:22.517372
++select * from v_best_statements;
+
+# 2020-08-04 20:55:46.624183
++\q
+
+# 2020-09-13 21:47:16.047031
++select * from v_best_statements;
+
+# 2020-09-13 21:50:59.904595
++select * from v_best_statements where symbol='FDS'
++;
+
+# 2020-09-13 21:51:36.651473
++select * from v_best_statements where symbol='MKTX';
+
+# 2020-09-13 21:52:01.265172
++select * from v_best_statements where symbol='AMZN';
+
+# 2020-09-13 22:00:28.966332
++select * from v_best_statements;
+
+# 2020-09-13 22:03:23.486822
++select * from v_best_statements where name like '%pepsi%'
++;
+
+# 2020-09-13 22:03:56.445508
++select * from v_best_statements where name like '%coca%';
+
+# 2020-09-13 22:04:20.294957
++select * from v_best_statements;
+
+# 2020-09-13 22:16:44.102035
++select * from v_best_statements where symbol='KHC';
+
+# 2020-09-13 22:17:04.718757
++select * from v_best_statements where name like '%kraft%';
+
+# 2020-09-13 22:17:53.027317
++select * from v_best_statements where name like '%hershey';
+
+# 2020-09-13 22:19:57.123280
++select * from v_best_statements;
+
+# 2020-09-13 23:53:27.555298
++quit
+
+# 2020-09-29 21:03:04.668014
++select * from indexes;
+
+# 2020-09-29 21:03:33.035853
++select * from instrument_indexes;
+
+# 2020-09-29 21:04:06.844760
++select instrument_id from instrument_indexes where index_id=0
++;
+
+# 2020-09-29 21:05:01.052269
++select * from v_best_statements where instrument_id < 500;
+
+# 2020-09-29 21:06:32.286292
++select * from v_largest_companies where instrument_id < 500;
+
+# 2020-09-29 21:14:10.632780
++select * from indexes;
+
+# 2020-09-29 21:22:44.364555
++select instrument_id from v_pulls_due;
+
+# 2020-09-29 21:23:16.370045
++select count(instrument_id) from v_pulls_due;
+
+# 2020-09-29 21:23:43.756702
++select count(instrument_id) from v_pulls_due inner join v_symbols on v_symbols.instrument_id = v_pulls_due.instrument_id;
+
+# 2020-09-29 21:24:07.279334
++select count(v_symbols.instrument_id) from v_pulls_due inner join v_symbols on v_symbols.instrument_id = v_pulls_due.instrument_id;
+
+# 2020-09-29 21:25:01.386942
++select * from hosts;
+
+# 2020-09-29 21:25:54.878011
++select count(v_symbols.instrument_id) from v_pulls_due inner join v_symbols on v_symbols.instrument_id = v_pulls_due.instrument_id where v_symbols.host_id=4;
+
+# 2020-09-29 21:27:21.978769
++select count(instrument_id) from v_symbols where host_id=4;
+
+# 2020-09-29 21:28:10.698600
++select unique count(instrument_id) from v_symbols where host_id=4;
+
+# 2020-09-29 21:28:23.575139
++select count(unique instrument_id) from v_symbols where host_id=4;
+
+# 2020-09-29 21:28:35.320912
++select unique instrument_id from v_symbols where host_id=4;
+
+# 2020-09-29 21:28:55.740017
++select count(distinct instrument_id) from v_symbols where host_id=4;
+
+# 2020-09-29 21:29:19.381270
++select count(distinct instrument_id) from v_pulls_due;
+
+# 2020-09-29 21:42:29.110283
++\?
+
+# 2020-09-29 21:43:13.088462
++\i views.plsql;
+
+# 2020-09-29 21:45:01.356831
++select count(distinct instrument_id) from v_pulls_due;
+
+# 2020-09-29 21:45:28.422088
++select count(distinct instrument_id) from v_symbols where host_id=4;
+
+# 2020-09-29 21:51:06.826125
++select v_pulls_due.instrument_id from v_pulls_due left join v_symbols on v_symbols.instrument_id = v_pulls_due.instrument_id where v_symbols.host_id=4 and v_symbols.instrument_id is null;
+
+# 2020-09-29 21:51:18.480642
++select v_pulls_due.instrument_id from v_pulls_due left join v_symbols on v_symbols.instrument_id = v_pulls_due.instrument_id where v_symbols.host_id=4;
+
+# 2020-09-29 21:51:49.798359
++select v_pulls_due.instrument_id v_symbols.instrument_id from v_pulls_due left join v_symbols on v_symbols.instrument_id = v_pulls_due.instrument_id where v_symbols.host_id=4;
+
+# 2020-09-29 21:52:13.782741
++select v_pulls_due.instrument_id, v_symbols.instrument_id from v_pulls_due left join v_symbols on v_symbols.instrument_id = v_pulls_due.instrument_id where v_symbols.host_id=4;
+
+# 2020-09-29 21:53:39.452019
++select count(v_pulls_due.instrument_id, v_symbols.instrument_id) from v_pulls_due left join v_symbols on v_symbols.instrument_id = v_pulls_due.instrument_id where v_symbols.host_id=4;
+
+# 2020-09-29 21:54:03.796290
++select count(v_pulls_due.instrument_id), v_symbols.instrument_id from v_pulls_due left join v_symbols on v_symbols.instrument_id = v_pulls_due.instrument_id where v_symbols.host_id=4;
+
+# 2020-09-29 21:54:16.553218
++select count(v_pulls_due.instrument_id) from v_pulls_due left join v_symbols on v_symbols.instrument_id = v_pulls_due.instrument_id where v_symbols.host_id=4;
+
+# 2020-09-29 21:58:15.317209
++select count(distinct instrument_id) from v_pulls_due;
+
+# 2020-09-29 21:58:28.744349
++select count(distinct instrument_id) from v_symbols where host_id=4;
+
+# 2020-09-29 22:01:17.261072
++select distinct p.instrument_id from v_pulls_due as p full join v_symbols as s on s.instrument_id = p.instrument_id where host_id=4;
+
+# 2020-09-29 22:02:12.670430
++select distinct p.instrument_id s.instrument_id from v_pulls_due as p left join v_symbols as s on s.instrument_id = p.instrument_id where host_id=4;
+
+# 2020-09-29 22:02:22.420034
++select distinct p.instrument_id, s.instrument_id from v_pulls_due as p left join v_symbols as s on s.instrument_id = p.instrument_id where host_id=4;
+
+# 2020-09-29 22:02:40.608924
++select distinct p.instrument_id, s.instrument_id from v_pulls_due as p right join v_symbols as s on s.instrument_id = p.instrument_id where host_id=4;
+
+# 2020-09-29 22:03:47.769902
++select distinct s.instrument_id from v_pulls_due as p full outer join v_symbols as s on s.instrument_id = p.instrument_id where host_id=4;
+
+# 2020-09-29 22:04:29.545046
++select count(distinct instrument_id) from v_symbols where host_id=4;
+
+# 2020-09-29 22:04:52.152840
++select count(distinct instrument_id) from v_pulls_due;
+
+# 2020-09-29 22:05:40.698505
++select distinct instrument_id from v_pulls_due;
+
+# 2020-09-29 22:07:04.268213
++select distinct p.instrument_id from v_pulls_due as p full left join v_symbols as s on s.instrument_id = p.instrument_id and s.host_id=4;
+
+# 2020-09-29 22:07:18.492242
++select distinct p.instrument_id from v_pulls_due as p left outer join v_symbols as s on s.instrument_id = p.instrument_id and s.host_id=4;
+
+# 2020-09-29 22:07:45.533884
++select distinct p.instrument_id, s.instrument_id from v_pulls_due as p left outer join v_symbols as s on s.instrument_id = p.instrument_id and s.host_id=4;
+
+# 2020-09-29 22:08:24.688143
++select distinct p.instrument_id, s.instrument_id from v_pulls_due as p left outer join v_symbols as s on s.instrument_id = p.instrument_id and s.host_id=4 where s.instrument_id is null;
+
+# 2020-09-29 22:09:42.632859
++select * from v_symbols where host_id=4 and (instrument_id > 1655 and instrument_id < 1666);
+
+# 2020-09-29 22:09:55.689636
++select * from symbols where host_id=4 and (instrument_id > 1655 and instrument_id < 1666);
+
+# 2020-09-29 22:10:58.067635
++select * from instruments where (instrument_id > 1655 and instrument_id < 1666);
+
+# 2020-09-29 22:11:11.594744
++select * from instruments where (id > 1655 and id < 1666);
+
+# 2020-09-29 22:12:18.479235
++select * from symbols where and (instrument_id > 1655 and instrument_id < 1666);
+
+# 2020-09-29 22:12:24.370356
++select * from symbols where (instrument_id > 1655 and instrument_id < 1666);
+
+# 2020-09-29 22:14:47.048819
++select * from instrument_indexes where (instrument_id > 1655 and instrument_id < 1666);
+
+# 2020-09-29 22:16:03.988157
++select count(instrument_id) from v_pulls_due;
+
+# 2020-09-29 22:16:12.137044
++select count(distinct instrument_id) from v_pulls_due;
+
+# 2020-09-29 22:17:12.700294
++select count(distinct instrument_id) from v_pulls_due where index_id=2
++;
+
+# 2020-09-29 22:17:28.203602
++select * from indexes;
+
+# 2020-09-29 22:21:17.911537
++select count(distinct instrument_id) from v_pulls_due where index_id=2
++;
+
+# 2020-09-29 22:21:44.194362
++select count(distinct instrument_id) from v_symbols where host_id=4;
+
+# 2020-09-29 22:24:25.053319
++select distinct p.instrument_id, s.instrument_id from v_pulls_due as p left outer join v_symbols as s on s.instrument_id = p.instrument_id where s.instrument_id is null and s.host_id=4 and p.index_id=2;
+
+# 2020-09-29 22:25:19.071310
++select distinct p.instrument_id, s.instrument_id from v_pulls_due as p full outer join v_symbols as s on s.instrument_id = p.instrument_id where s.instrument_id is null and s.host_id=4 and p.index_id=2;
+
+# 2020-09-29 22:25:33.206690
++select distinct p.instrument_id, s.instrument_id from v_pulls_due as p full outer join v_symbols as s on s.instrument_id = p.instrument_id where s.host_id=4 and p.index_id=2;
+
+# 2020-09-29 22:26:39.470762
++select distinct p.instrument_id, s.instrument_id from v_pulls_due as p full outer join v_symbols as s on s.instrument_id = p.instrument_id and s.host_id=4 where p.index_id=2;
+
+# 2020-09-29 22:26:54.512003
++select distinct p.instrument_id, s.instrument_id from v_pulls_due as p right outer join v_symbols as s on s.instrument_id = p.instrument_id and s.host_id=4 where p.index_id=2;
+
+# 2020-09-29 22:27:05.717348
++select distinct p.instrument_id, s.instrument_id from v_pulls_due as p left outer join v_symbols as s on s.instrument_id = p.instrument_id and s.host_id=4 where p.index_id=2;
+
+# 2020-09-29 22:27:18.651872
++select count(distinct instrument_id) from v_symbols where host_id=4;
+
+# 2020-09-29 22:27:48.175197
++select count(distinct instrument_id) from v_pulls_due where index_id=2
++;
+
+# 2020-09-29 23:07:25.094865
++select * from v_stocks_summary;
+
+# 2020-09-29 23:09:19.699068
++select * from v_macroecon;
+
+# 2020-09-29 23:13:05.395171
++select * from v_largest_companies;
+
+# 2020-10-01 23:39:44.845911
++select * from v_last_pulls;
+
+# 2020-10-01 23:42:41.996255
++select * from v_last_quote;
+
+# 2020-10-01 23:44:00.634395
++select * from v_largest_companies;
+
+# 2020-10-01 23:45:09.252769
++select * from v_largest_companies where market_cap_b is not null;
+
+# 2020-10-01 23:49:04.935633
++select * from v_largest_companies where name = 'ansys';
+
+# 2020-10-01 23:49:44.076452
++select * from v_macroecon;
+
+# 2020-10-02 09:50:14.021440
++exit
+
+# 2020-10-04 21:49:32.575657
++select * from v_largest_companies limit 500;
+
+# 2020-10-04 21:50:58.768138
++select * from instruments;
+
+# 2020-10-04 21:51:14.501247
++select * from v_largest_companies;
+
+# 2020-10-04 21:52:02.673352
++select * from v_largest_companies where market_cap_b is not null;
+
+# 2020-10-04 21:53:06.056660
++select * from v_largest_companies where market_cap_b is not null limit 500;
+
+# 2020-10-04 21:53:51.528672
++select top 500 * from v_largest_companies where market_cap_b is not null;
+
+# 2020-10-04 21:56:46.766865
++select * from v_largest_companies where market_cap_b is not null fetch first 500 rows only;
+
+# 2020-10-04 21:57:09.996456
++select * from v_largest_companies where market_cap_b is not null fetch first 5rows only;
+
+# 2020-10-04 21:57:26.692035
++select * from v_largest_companies where market_cap_b is not null limit 5;
+
+# 2020-10-04 21:59:24.502799
++\i views.plsql;
+
+# 2020-10-04 21:59:38.084619
++select * from v_largest_companies;
+
+# 2020-10-04 22:00:33.678589
++\i views.plsql;
+
+# 2020-10-04 22:03:16.208909
++select * from v_largest_companies;
+
+# 2020-10-04 22:06:10.338612
++\i views.plsql;
+
+# 2020-10-04 22:06:16.027230
++select * from v_largest_companies2;
+
+# 2020-10-04 22:06:33.387281
++select * from v_largest_companies2 order by market_cap_b desc limit 500;
+
+# 2020-10-04 22:12:48.047232
++\i views.plsql;
+
+# 2020-10-04 22:12:58.400083
++select * from v_largest_companies2;
+
+# 2020-10-04 22:13:19.776940
++select * from v_largest_companies2 order by market_cap_b desc;
+
+# 2020-10-04 22:14:32.439376
++\i views.plsql;
+
+# 2020-10-04 22:14:36.241461
++select * from v_largest_companies2 order by market_cap_b desc;
+
+# 2020-10-04 22:15:12.380663
++\i views.plsql;
+
+# 2020-10-04 22:15:20.799650
++select * from v_largest_companies2 order by market_cap_b desc;
+
+# 2020-10-04 22:15:46.103681
++\i views.plsql;
+
+# 2020-10-04 22:15:49.654213
++select * from v_largest_companies2 order by market_cap_b desc;
+
+# 2020-10-04 22:16:35.954985
++drop view v_largest_companies2;
+
+# 2020-10-04 22:19:12.111470
++\i views.plsql;
+
+# 2020-10-04 22:20:43.288205
++select sum(market_cap_b) from v_largest_companies;
+
+# 2020-10-04 22:21:33.737677
++select *, market_cap_b/31111*100 as market_frac from v_largest_companies;
+
+# 2020-10-04 22:25:51.851079
++select * from v_largest_companies inner join v_best_statements on v_best_statements.symbol = v_largest_companies.symbol;
+
+# 2020-10-04 22:40:21.941596
++pwd
++;
+
+# 2020-10-04 22:40:27.737858
++\q
+
+# 2020-10-04 22:40:49.500614
++\i views.plsql;
+
+# 2020-10-04 22:41:00.006053
++select * from v_largest_best;
+
+# 2020-10-04 22:43:06.862138
++select count(*) from v_best_statements;
+
+# 2020-10-04 22:46:46.802826
++\i views.plsql;
+
+# 2020-10-04 22:46:56.341467
++drop view v_best_statements;
+
+# 2020-10-04 22:47:09.958800
++drop view v_largest_best;
+
+# 2020-10-04 22:47:13.941869
++drop view v_best_statements;
+
+# 2020-10-04 22:47:33.255739
++\i views.plsql;
+
+# 2020-10-04 22:48:17.355975
++select * from v_best_statements;
+
+# 2020-10-04 22:54:14.899508
++drop view v_best_statements;
+
+# 2020-10-04 23:00:16.377081
++\i views.plsql;
+
+# 2020-10-04 23:00:52.738528
++select * from v_best_statements;
+
+# 2020-10-04 23:02:27.315575
++\i views.plsql;
+
+# 2020-10-04 23:02:29.234309
++select * from v_best_statements;
+
+# 2020-10-04 23:03:56.830781
++\i views.plsql;
+
+# 2020-10-04 23:03:58.492700
++select * from v_best_statements;
+
+# 2020-10-04 23:05:21.918039
++select sum(market_cap_b) from v_best_statements;
+
+# 2020-10-04 23:06:00.283172
++select market_cap_b/200 as frac, *  from v_best_statements;
+
+# 2020-10-04 23:08:16.034567
++select market_cap_b/200 as frac, *  from v_best_statements limit 10;
+
+# 2020-10-04 23:09:13.174329
++select sum(market_cap_b) from v_best_statements limit 16;
+
+# 2020-10-04 23:11:12.547481
++\i views.plsql;
+
+# 2020-10-04 23:11:21.461157
++select * from v_best_16_statements;
+
+# 2020-10-04 23:11:45.148912
++drop view v_best_16_statements;
+
+# 2020-10-04 23:15:40.542107
++select * from v_best_statements limit 32;
+
+# 2020-10-04 23:16:53.910010
++select * from v_best_statements limit 64;
+
+# 2020-10-04 23:20:38.542840
++\i views.plsql;
+
+# 2020-10-04 23:20:42.501717
++select * from v_best_statements limit 64;
+
+# 2020-10-04 23:22:53.499876
++\i views.plsql;
+
+# 2020-10-04 23:22:55.682878
++select * from v_best_statements limit 64;
+
+# 2020-10-04 23:30:45.987374
++\h
+
+# 2020-10-04 23:31:00.494463
++\?
+
+# 2020-10-04 23:44:52.866501
++\o best_statements.txt
+
+# 2020-10-04 23:45:24.405329
++select * from v_best_statements limit 64;
+
+# 2020-10-05 11:48:39.764651
++select * from v_statements;
+
+# 2020-10-05 11:49:02.677340
++clear
++;
+
+# 2020-10-05 11:49:13.487204
++select * from v_best_statements;
+
+# 2020-10-05 11:50:10.424936
++select * from v_best_statements where symbol='ANSS' or symbol='FDS' or symbol='MKTX' or symbol='AMZN'
++;
+
+# 2020-10-05 11:51:29.557551
++\q
+
+# 2020-10-05 11:51:52.451833
++\i views.plsql;
+
+# 2020-10-05 11:52:33.212447
++select * from v_best_statements where symbol='ANSS' or symbol='FDS' or symbol='MKTX' or symbol='AMZN';
+
+# 2020-10-05 14:00:31.326815
++\q
+
+# 2020-10-05 16:14:09.455684
++\q
+
+# 2020-12-13 16:41:55.032947
++\dt
+
+# 2020-12-13 16:42:14.524603
++select * from v_best_statements;
+
+# 2020-12-13 16:43:30.396250
++\h
+
+# 2020-12-13 16:43:46.812220
++\?
+
+# 2020-12-13 16:44:05.229847
++\q
+
+# 2020-12-13 16:44:42.137196
++\o best_statements.txt
+
+# 2020-12-13 16:44:52.130639
++select * from v_best_statements;
+
+# 2020-12-13 16:44:56.158129
++\q
+
+# 2020-12-15 22:24:29.981889
++\i views.plsql;
+
+# 2020-12-15 22:24:50.843401
++drop view v_best_statements;
+
+# 2020-12-15 22:24:58.512212
++\i views.plsql;
+
+# 2020-12-16 00:50:36.672368
++\q
+
+# 2020-12-16 00:51:14.816895
++select * from v_best_statements;
+
+# 2020-12-16 00:51:48.999973
++\o best_statements2.txt
+
+# 2020-12-16 00:51:52.477624
++select * from v_best_statements;
+
+# 2020-12-16 00:51:56.107698
++\q
+
+# 2020-12-17 21:24:17.203277
++\i tables.plsql;
+
+# 2020-12-17 21:25:50.232843
++\i home/bk/src/fin/sql/sql02/tables.plsql;
+
+# 2020-12-17 21:26:22.397065
++\i /home/bk/src/fin/sql/sql02/tables.plsql;
+
+# 2020-12-17 21:39:38.829108
++select * from instrument_gdratings order by instrument_id;
+
+# 2020-12-17 21:40:40.753379
++\q
+
+# 2020-12-17 21:43:25.178513
++select * from v_best_statements as b
++left join instrument_gdratings g on b.g.instrument_id = b.instrument_id;
+
+# 2020-12-17 21:43:59.189726
++select * from v_best_statements, g.gd_rating as b
++left join instrument_gdratings as g on b.g.instrument_id = b.instrument_id;
+
+# 2020-12-17 21:44:25.217409
++select * from v_best_statements, g.gd_rating as b
++left join instrument_gdratings as g on g.instrument_id = b.instrument_id;
+
+# 2020-12-17 21:45:24.257348
++select * from v_best_statements as b
++left join instrument_gdratings as g on g.instrument_id = b.instrument_id;
+
+# 2020-12-17 21:46:26.849592
++select count(*) from v_best_statements as b
++left join instrument_gdratings as g on g.instrument_id = b.instrument_id;
+
+# 2020-12-17 21:49:33.384167
++drop view v_statements;
+
+# 2020-12-17 21:49:46.693868
++drop view v_statements cascade;
+
+# 2020-12-17 21:51:22.187633
++\q
+
+# 2020-12-17 21:51:37.697006
++\i views.plsql;
+
+# 2020-12-17 21:51:48.213473
++select * from v_best_statements;
+
+# 2020-12-17 21:52:07.472861
++\q
+
+# 2020-12-17 22:07:34.080593
++\i views.plsql;
+
+# 2020-12-17 22:07:46.566280
++drop view v_best_statements;
+
+# 2020-12-17 22:07:49.928310
++\i views.plsql;
+
+# 2020-12-17 22:08:00.711871
++select * from v_best_statements;
+
+# 2020-12-17 22:13:17.652953
++\i views.plsql;
+
+# 2020-12-17 22:13:20.586376
++select * from v_best_statements;
+
+# 2020-12-17 22:16:17.725789
++\i views.plsql;
+
+# 2020-12-17 22:16:22.139093
++select * from v_best_statements;
+
+# 2020-12-17 22:22:43.972050
++\i views.plsql;
+
+# 2020-12-17 22:23:29.786399
++select * from v_best_statements;
+
+# 2020-12-17 22:31:13.263094
++select year, revenue from v_statements where instrument_id=1179;
+
+# 2020-12-17 22:43:51.548486
++\i views.plsql;
+
+# 2020-12-17 22:44:23.221994
++select * from v_best_revenue_history;
+
+# 2020-12-17 22:47:10.143310
++select distinct * from v_best_revenue_history;
+
+# 2020-12-17 22:47:56.364380
++\i views.plsql;
+
+# 2020-12-17 22:48:15.220014
++select * from v_best_revenue_history;
+
+# 2020-12-17 22:51:30.307955
++\q
+
+# 2020-12-17 22:58:02.469409
++\copy (select * from v_best_statements) to 'best_statements.csv' with csv;
+
+# 2020-12-17 22:58:17.873384
++s
+
+# 2020-12-17 22:59:04.823769
++\copy (select * from v_best_statements) to 'best_statements.csv' with header csv;
+
+# 2020-12-17 23:03:15.422861
++\copy (select * from v_best_revenue_history) to 'best_rev_hist.csv' with header csv;
+
+# 2020-12-17 23:16:54.922998
++\q

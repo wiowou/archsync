@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd /home/bk/pkg
+
+cd yay
+git pull
+makepkg -si --noconfirm
+cd ..
+
+cd pydbgp
+makepkg -si --noconfirm
+cd ..
+
+yay -S --makepkg makepkg --noconfirm - < yay.list
+# if the line above doesn't work, try the one below
+# yay -S - < yay.list

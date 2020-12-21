@@ -1,0 +1,15 @@
+#!/bin/bash
+
+local=`pwd`
+if [ $# -gt 0 ]; then
+  local=$1
+  dest=.
+  # rsync -a /home/bk/mnt/backup/sync/$1 .
+  if [ $# -gt 2 ]; then
+    dest=$3
+  fi
+  rsync -a $2/$1 $dest
+else
+  echo "usage: pull dir-in-backup [dest-dir]"
+fi
+echo pulled $local from $2/$1 to $dest

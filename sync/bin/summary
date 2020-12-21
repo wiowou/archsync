@@ -1,0 +1,79 @@
+#!/usr/bin/python
+
+import sys
+
+NSPACES = 15
+
+class Category:
+    def __init__(self, title):
+        self.title = title
+        self.dates = []
+        self.prices = []
+
+    def subtotal(self):
+        return sum(self.prices)
+
+    def ndays(self):
+        if len(self.dates) == 0:
+            return 1;
+        return max(self.dates) + 1
+
+    def projected(self, ndays=None):
+        if ndays is None:
+            ndays = max(self.dates) + 1
+        return int(round(30. / min(30, ndays) * self.subtotal(), 0))
+
+def print_actuals(categories):
+    total = 0
+    for cat in categories:
+        subtotal = cat.subtotal()
+        total += subtotal
+        spaces = ' ' * (NSPACES - len(cat.title))
+        print(cat.title + spaces +  str(int(round(subtotal, 0))) )
+    return total
+
+def print_projected(categories):
+    total = 0
+    ndays = 1
+    for cat in categories:
+        ndays = max(ndays, cat.ndays())
+    for cat in categories:
+        subtotal = cat.projected(ndays)
+        total += subtotal
+        spaces = ' ' * (NSPACES - len(cat.title))
+        print(cat.title + spaces +  str(int(round(subtotal, 0))) )
+    return total
+
+if __name__ == '__main__':
+    categories = []
+    fname = sys.argv[1]
+    f = open(fname, 'r')
+    lines = f.read().splitlines()
+    cat = None
+    for line in lines:
+        words = line.split()
+        if len(words) == 1:
+            if not cat is None:
+                categories.append(cat)
+            cat = Category(words[0].strip())
+            NSPACES = max(NSPACES, len(words[0]) + 3)
+        elif len(words) >= 2:
+            try:
+                cat.prices.append(float(words[1].strip()) )
+                cat.dates.append( int(words[0].strip()) )
+            except ValueError:
+                price = 0
+    if not cat is None:
+        categories.append(cat)
+
+    spaces = ' ' * (NSPACES - 5)
+    print()
+    print('     PROJECTED')
+    total = print_projected(categories)
+    print()
+    print('TOTAL' + spaces + str(int(round(total, 0))) )
+    print()
+    print('     ACTUAL ')
+    total = print_actuals(categories)
+    print()
+    print('TOTAL' + spaces + str(int(round(total, 0))) )

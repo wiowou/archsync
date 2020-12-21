@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ $# -eq 2 ]; then
+	if [ $1 = "-b" ]; then
+		gdbgui $2
+	elif [ $1 = "-p" ]; then
+		pudb3 $2
+	fi
+elif [ $# -eq 1 ]; then
+	if [[ $1 =~ [.py]$ ]]; then
+		pudb3 $1
+	else
+		snippet=`head -c80 $1`
+		if [[ "$snippet" == *"#!/usr/bin/python"* ]] || [[ "$snippet" == *"import "* ]]; then
+			pudb3 $1
+		else
+			gdbgui $1
+		fi
+	fi
+fi

@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale '/home/bk/mnt/shared/pictures/arden/2019-12-14/20191214_140433.jpg' '/home/bk/mnt/shared/pictures/arden/2019-12-14/20191214_142856.jpg' '/home/bk/mnt/shared/pictures/arden/2019-12-14/20191214_163740.jpg' '/home/bk/mnt/shared/pictures/arden/2019-12-14/20191214_163900.jpg' '/home/bk/mnt/shared/pictures/arden/2019-12-14/20191214_163915.jpg' 

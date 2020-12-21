@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mkdir $1.git
+cd $1.git
+git init -bare
+git symbolic-ref HEAD refs/heads/master
+git config receive.denyCurrentBranch ignore
+

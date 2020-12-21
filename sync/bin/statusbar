@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#memCpu=`ps -eo %cpu,%mem | awk '{cpusum += $1; memsum += $2;} END {print "CPU " cpusum "% MEM " memsum "%"}'`
+#cpu=`ps -eo %cpu | awk '{cpusum += $1;} END {print "CPU " cpusum "%"}'`
+con=enp5s0f1
+ipaddr=`ip addr show label $con | grep "inet " | awk '{print "IP " $2}' `
+ipaddrstate=`ip addr | grep ${con}: | awk '{print $9}'`
+file=/home/bk/tmp/.connattempts
+if [ "$ipaddrstate" = "DOWN" ]; then
+	nattempts=1
+	if [[ -f $file ]]; then
+		nattempts=`cat $file`
+		nattempts=$(($nattempts+1))
+	fi
+	sudo netctl start wired && ipaddrstate=`ip addr | grep ${con}: | awk '{print $9}'`
+	if [ "$ipaddrstate" = "UP" ]; then
+		sudo mount -a
+	fi
+	if [ $nattempts -lt 5 ]; then
+		echo $nattempts > $file 
+	fi
+else
+    rm -f $file
+fi
+cpu=`grep cpu /proc/stat | awk '{usage=($2+$4)/($2+$4+$5)*100} END {printf "CPU %.1f%", usage}'`
+mem=`free -m | grep Mem: | awk '{printf "MEM %.1f%", $3/$2*100}'`
+disk=`df -h . | grep /dev/sdb2 | awk '{print "DISK " $4}'`
+dt=`date +"%a %b %d,%Y   %I:%M %p"`
+echo $ipaddr $ipaddrstate "|" $mem "|" $cpu "|" ${disk}B "|"  $dt

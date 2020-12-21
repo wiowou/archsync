@@ -1,0 +1,5 @@
+#!/bin/bash
+#/usr/bin/chromium --remote-debugging-port=9222 --disk-cache-dir=/tmp/cache
+# /usr/bin/chromium --disable-sync-preferences --process-per-site --disk-cache-dir=/tmp/cache --disable-reading-from-canvas --enable-dom-distiller 
+# /usr/bin/chromium --disable-sync-preferences --process-per-site --disk-cache-dir=/tmp/cache --enable-dom-distiller 
+/usr/bin/brave --disable-sync-preferences --process-per-site --disk-cache-dir=/tmp/cache --enable-dom-distiller 

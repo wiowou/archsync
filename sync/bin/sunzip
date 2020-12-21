@@ -1,0 +1,3 @@
+#!/bin/bash
+
+openssl enc -aes-256-cbc -pbkdf2 -iter 100000 -d -pass file:$HOME/.pinit -in $1 | tar xz

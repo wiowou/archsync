@@ -1,0 +1,36 @@
+#!/bin/bash
+
+cmd=$1
+remote=$2
+
+$cmd bin $remote/sync
+#$cmd .ssh $remote/sync
+#$cmd src $remote/sync
+$cmd include $remote/sync
+$cmd lib $remote/sync
+# .vim
+mkdir -p $remote/sync/.vim
+$cmd .vim/after $remote/sync/.vim
+$cmd .vim/autoload $remote/sync/.vim
+$cmd .vim/colors $remote/sync/.vim
+$cmd .vim/doc $remote/sync/.vim
+$cmd .vim/plugin $remote/sync/.vim
+$cmd .bashrc $remote/sync
+$cmd .bash_profile $remote/sync
+$cmd .gdbinit $remote/sync
+$cmd .gitconfig $remote/sync
+$cmd .gitignore_global $remote/sync
+$cmd .vimrc $remote/sync
+$cmd .Xmodmap $remote/sync
+$cmd .xinitrc $remote/sync
+$cmd .Xresources $remote/sync
+$cmd .urxvt $remote/sync
+# .config
+mkdir -p $remote/sync/.config
+$cmd .config/sway $remote/sync/.config
+$cmd .config/termite $remote/sync/.config
+$cmd .config/pgcli $remote/sync/.config
+$cmd .wallpaper $remote/sync
+$cmd .fehbg $remote/sync
+$cmd pkg $remote/sync
+
