@@ -9,3 +9,8 @@ szip enc
 echo "moving enc to server"
 mv enc.sec.tar.gz $remote/sync
 push-all $remote 
+cd $remote
+git add -A
+git commit -m "updates"
+git push
+
