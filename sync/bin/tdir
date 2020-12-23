@@ -1,5 +1,0 @@
-#!/bin/bash
-
-local=`pwd`
-echo "$local" > $HOME/.urxvt/cwd
-echo "$local"

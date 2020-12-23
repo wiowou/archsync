@@ -1,4 +1,0 @@
-#!/bin/bash
-
-local=`cat $HOME/.urxvt/cwd`
-urxvt -cd $local
