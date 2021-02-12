@@ -1,0 +1,15 @@
+#!/bin/bash
+
+dirpath=${PWD}
+projname=${PWD##*/}
+mkdir ${gitpriv}/${projname}.git
+cd ${gitpriv}/${projname}.git
+git init --bare
+git config receive.denyCurrentBranch ignore
+cd $dirpath
+git init
+git remote add origin ${gitpriv}/${projname}.git
+git add -A
+git commit -m "first commit"
+git push origin master
+

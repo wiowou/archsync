@@ -10,6 +10,7 @@ gdb
 git
 grim
 nmap
+nodejs
 npm
 npm-check-updates
 numlockx
@@ -30,4 +31,5 @@ unzip
 xclip
 xorg-server-xwayland
 xsel
+yarn
 zip
