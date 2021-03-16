@@ -5,7 +5,9 @@ cp ~/bin/templates/launch.json .vscode/launch.json
 yarn init -y
 yarn add --dev @babel/core @babel/cli @babel/preset-env @babel/preset-typescript @babel/node
 cp ~/bin/templates/.babelrc .
-yarn add --dev eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
-mkdir src
-touch main.js
+yarn add --dev eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-react
+cp ~/bin/templates/.eslintrc.json .
+mkdir client
+mkdir server
+touch index.js
 

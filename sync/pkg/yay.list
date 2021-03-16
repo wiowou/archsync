@@ -2,8 +2,11 @@ chromium-ozone
 firebase-tools
 heroku-cli
 masterpdfeditor-free
+mongodb-bin
+mongodb-tools-bin
 neovim-nightly-git
 pgcli
+postman-bin
 python-cli_helpers
 python-pgspecial
 python-pylint-common

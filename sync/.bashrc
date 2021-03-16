@@ -59,7 +59,7 @@ alias cd='
         if [ $# -gt 0 ]; then
             dest=$1
         fi
-        cd $dest
+        cd "$dest"
 		pwd > $HOME/.cwd
         ls
     }; _cd'
@@ -71,3 +71,4 @@ alias wd='
         fi
         cd $dest
     }; _wd'
+alias mongosandbox='mongo "mongodb+srv://sandbox.mr5rc.mongodb.net/Sandbox" --username m001-student'

@@ -10,7 +10,7 @@
       "request": "launch",
       "name": "babel-node debug",
       "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/babel-node",
-      "program": "${workspaceFolder}/main.js",
+      "program": "${workspaceFolder}/index.js",
       "console": "integratedTerminal"
     }
   ]

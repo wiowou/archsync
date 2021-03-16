@@ -5,9 +5,15 @@ cd
 szip .ssh
 echo "moving ssh to server"
 mv .ssh.sec.tar.gz $remote/sync/ssh.sec.tar.gz
-szip enc
-echo "moving enc to server"
-mv enc.sec.tar.gz $remote/sync
+
+if [ -d "/home/bk/mnt/usb/enc" ]; then
+	cd /home/bk/mnt/usb/
+	szip enc
+	echo "moving enc to server"
+	mv enc.sec.tar.gz $remote/sync
+	cd
+fi
+
 push-all $remote 
 cd $remote
 git add -A
