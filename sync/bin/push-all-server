@@ -2,12 +2,13 @@
 
 remote=/home/bk/mnt/nas/archsync
 cd
-szip .ssh
-echo "moving ssh to server"
-mv .ssh.sec.tar.gz $remote/sync/ssh.sec.tar.gz
 
 if [ -d "/home/bk/mnt/usb/enc" ]; then
+	szip .ssh
+	echo "moving ssh to server"
+	mv .ssh.sec.tar.gz $remote/sync/ssh.sec.tar.gz
 	cd /home/bk/mnt/usb/
+	
 	szip enc
 	echo "moving enc to server"
 	mv enc.sec.tar.gz $remote/sync
